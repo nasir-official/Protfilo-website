@@ -700,3 +700,54 @@ ul {
   z-index: 0;
   pointer-events: none;
 }
+
+/* =========================================
+   ADMIN DASHBOARD CSS
+========================================= */
+.messages-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.message-card {
+  padding: 1.5rem;
+  transition: var(--transition-smooth);
+}
+
+.message-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 242, 254, 0.4);
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.message-subject {
+  font-family: var(--font-header);
+  color: var(--text-primary);
+  font-size: 1.125rem;
+}
+
+.message-date {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.message-sender {
+  font-size: 0.875rem;
+  color: var(--accent-primary);
+  margin-bottom: 1rem;
+}
+
+.message-body {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  white-space: pre-wrap;
+}

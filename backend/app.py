@@ -63,6 +63,19 @@ def save_contact():
     
     return jsonify({"message": "Message saved successfully"}), 201
 
+@app.route('/api/messages', methods=['GET'])
+def get_messages():
+    messages = ContactMessage.query.order_by(ContactMessage.timestamp.desc()).all()
+    messages_data = [{
+        "id": m.id,
+        "name": m.name,
+        "email": m.email,
+        "subject": m.subject,
+        "message": m.message,
+        "timestamp": m.timestamp.isoformat()
+    } for m in messages]
+    return jsonify(messages_data)
+
 @app.route('/api/stats', methods=['GET'])
 def get_stats():
     # Page View Stats
