@@ -136,7 +136,8 @@ if (projectsGrid) {
 // =========================================
 // API & Forms
 // =========================================
-const API_BASE = 'http://localhost:5000/api';
+// Use relative URL so it works on Replit, localhost, or any host
+const API_BASE = '/api';
 
 // Page View Tracking
 if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
