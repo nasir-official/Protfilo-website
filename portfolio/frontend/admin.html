@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Portfolio</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar admin-nav">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo back-link">
+                <i class="fas fa-arrow-left nav-back-icon"></i>
+                Nasir's <span>Portfolio</span>
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Login View -->
+        <div id="login-view" class="section container admin-login-container">
+            <div class="contact-form-card login-card fade-in-up">
+                <div class="section-header admin-login-header">
+                    <h2 class="heading-sm">Admin Access</h2>
+                    <div class="section-divider admin-divider"></div>
+                </div>
+                <form id="admin-login-form">
+                    <div class="form-group">
+                        <input type="password" id="admin-password" placeholder="Enter password" class="form-input" required />
+                    </div>
+                    <div id="login-error" class="form-status text-error login-error-msg"></div>
+                    <button type="submit" class="btn btn-primary btn-submit">Login</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Dashboard View -->
+        <div id="dashboard-view" class="section container dashboard-view hidden">
+            <div class="section-header">
+                <h2 class="heading-md">Dashboard</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div id="dashboard-loading" class="admin-loader">Loading data...</div>
+            <div id="dashboard-error" class="text-error admin-error-msg"></div>
+
+            <div id="dashboard-content" class="hidden">
+                <div class="grid-cols-2 stats-grid">
+                    <div class="skill-card fade-in-up stat-card">
+                        <h3 class="skill-title">Total Views</h3>
+                        <p id="stat-views" class="heading-lg text-gradient">0</p>
+                    </div>
+                    <div class="skill-card fade-in-up stat-card delayed">
+                        <h3 class="skill-title">Total Messages</h3>
+                        <p id="stat-messages" class="heading-lg text-gradient">0</p>
+                    </div>
+                </div>
+
+                <h3 class="heading-sm admin-inbox-heading">Inbox</h3>
+                
+                <div id="messages-grid" class="messages-grid">
+                    <!-- Messages populated securely via JS -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
