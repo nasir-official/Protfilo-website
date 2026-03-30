@@ -73,15 +73,15 @@ const projectsData = [
         description: "ML model predicting potential landslide zones in Northern Pakistan utilizing rainfall, slope elevation, and geological topologies.",
         technologies: ["Python", "XGBoost", "Geopandas", "Flask"],
         image: "https://images.unsplash.com/photo-1579290076326-e179e8630044?auto=format&fit=crop&w=800&q=80",
-        github: "https://github.com/MuhammadNasir/Landslide-Risk-Prediction",
-        live: "#"
+        github: "https://github.com/nasir-official/Land-Slide-Risk-Prediction",
+        live: "https://land-sliding-risk-predictor--naasm214.replit.app"
     },
     {
         title: "Road Accident Risk Analysis",
         description: "Spatiotemporal analysis identifying high-risk intersections in urban Pakistan to improve traffic safety infrastructure.",
         technologies: ["Pandas", "Scikit-Learn", "Folium"],
         image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=800&q=80",
-        github: "https://github.com/MuhammadNasir/road_accident_predictor",
+        github: "https://github.com/nasir-official/road_accident_predictor",
         live: "#"
     },
     {
@@ -89,7 +89,7 @@ const projectsData = [
         description: "Early warning system for forecasting reservoir levels and seasonal water availability based on snowmelt sensors.",
         technologies: ["React", "Python", "Prophet"],
         image: "https://images.unsplash.com/photo-1469122312224-c5846569feb1?auto=format&fit=crop&w=800&q=80",
-        github: "https://github.com/MuhammadNasir/water_availability_predictor",
+        github: "https://github.com/nasir-official/water_availability_predictor",
         live: "#"
     },
     {
@@ -97,7 +97,7 @@ const projectsData = [
         description: "Predictive system analyzing student demographics, grades, and attendance to identify and prevent potential dropouts.",
         technologies: ["Flask", "Scikit-learn", "Numpy", "Pandas"],
         image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80",
-        github: "https://github.com/MuhammadNasir/student_dropout_predictor",
+        github: "https://github.com/nasir-official/student_dropout_predictor",
         live: "#"
     },
     {
@@ -105,7 +105,7 @@ const projectsData = [
         description: "Forecasting tourist arrivals in Northern Pakistan based on seasonal weather patterns and local promotional factors.",
         technologies: ["Flask", "Scikit-learn", "Folium", "Joblib"],
         image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80",
-        github: "https://github.com/MuhammadNasir/tourist-demand-predict",
+        github: "https://github.com/nasir-official/tourist-demand-predict",
         live: "#"
     }
 ];
