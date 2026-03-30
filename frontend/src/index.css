@@ -1,0 +1,79 @@
+:root {
+  --bg-dark: #0a0e14;
+  --bg-light: #161b22;
+  --accent: #00f2fe;
+  --accent-glow: rgba(0, 242, 254, 0.3);
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --card-bg: rgba(22, 27, 34, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --font-header: 'Orbitron', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Glassmorphism utility */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+}
+
+/* Animations */
+@keyframes float {
+  from { transform: translate(0, 0); }
+  to { transform: translate(100px, 50px) scale(1.1); }
+}
+
+.blob {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  filter: blur(80px);
+  opacity: 0.15;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.blob-1 {
+  background: var(--accent);
+  top: -10%;
+  right: -10%;
+  animation: float 20s infinite alternate;
+}
+
+.blob-2 {
+  background: #4568dc;
+  bottom: -10%;
+  left: -10%;
+  animation: float 25s infinite alternate-reverse;
+}
+
+#root {
+  width: 100%;
+}
