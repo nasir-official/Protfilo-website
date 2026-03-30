@@ -101,6 +101,10 @@ if (projectsGrid) {
                     <div class="project-tech">
                         ${proj.technologies.map(t => `<span class="tech-tag">${t}</span>`).join('')}
                     </div>
+                    <div class="project-links" style="display: flex; gap: 1rem; margin-top: auto; padding-top: 1rem;">
+                        <a href="${proj.live}" target="_blank" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.75rem;">Live Demo</a>
+                        <a href="${proj.github}" target="_blank" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.75rem;"><i class="fab fa-github"></i> Code</a>
+                    </div>
                 </div>
             </div>
         `;
