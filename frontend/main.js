@@ -61,26 +61,42 @@ if (mobileToggle && navLinks) {
 const projectsData = [
     {
         title: "Landslide Risk Prediction",
-        description: "ML model predicting potential landslide zones utilizing rainfall and geological topologies.",
+        description: "ML model predicting potential landslide zones in Northern Pakistan utilizing rainfall, slope elevation, and geological topologies.",
         technologies: ["Python", "XGBoost", "Geopandas", "Flask"],
         image: "https://images.unsplash.com/photo-1579290076326-e179e8630044?auto=format&fit=crop&w=800&q=80",
-        github: "#",
+        github: "https://github.com/MuhammadNasir/Landslide-Risk-Prediction",
         live: "#"
     },
     {
         title: "Road Accident Risk Analysis",
-        description: "Spatiotemporal analysis identifying high-risk intersections in urban Pakistan.",
+        description: "Spatiotemporal analysis identifying high-risk intersections in urban Pakistan to improve traffic safety infrastructure.",
         technologies: ["Pandas", "Scikit-Learn", "Folium"],
         image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=800&q=80",
-        github: "#",
+        github: "https://github.com/MuhammadNasir/road_accident_predictor",
         live: "#"
     },
     {
         title: "Water Availability System",
-        description: "Dashboard for forecasting reservoir levels based on snowmelt sensors.",
+        description: "Early warning system for forecasting reservoir levels and seasonal water availability based on snowmelt sensors.",
         technologies: ["React", "Python", "Prophet"],
         image: "https://images.unsplash.com/photo-1469122312224-c5846569feb1?auto=format&fit=crop&w=800&q=80",
-        github: "#",
+        github: "https://github.com/MuhammadNasir/water_availability_predictor",
+        live: "#"
+    },
+    {
+        title: "Student Dropout Predictor",
+        description: "Predictive system analyzing student demographics, grades, and attendance to identify and prevent potential dropouts.",
+        technologies: ["Flask", "Scikit-learn", "Numpy", "Pandas"],
+        image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80",
+        github: "https://github.com/MuhammadNasir/student_dropout_predictor",
+        live: "#"
+    },
+    {
+        title: "Tourist Demand Predictor",
+        description: "Forecasting tourist arrivals in Northern Pakistan based on seasonal weather patterns and local promotional factors.",
+        technologies: ["Flask", "Scikit-learn", "Folium", "Joblib"],
+        image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80",
+        github: "https://github.com/MuhammadNasir/tourist-demand-predict",
         live: "#"
     }
 ];
@@ -88,9 +104,9 @@ const projectsData = [
 const projectsGrid = document.getElementById('projects-grid');
 if (projectsGrid) {
     projectsData.forEach((proj, idx) => {
-        const delays = ['0s', '0.1s', '0.2s']; // Stagger effect
+        const delay = (idx % 3) * 0.1 + 's'; // Stagger effect for grid rows
         const html = `
-            <div class="project-card fade-in-up" style="transition-delay: ${delays[idx]}">
+            <div class="project-card fade-in-up" style="transition-delay: ${delay}">
                 <div class="project-image-wrapper">
                     <div class="project-overlay"></div>
                     <img src="${proj.image}" alt="${proj.title}" class="project-image" />
