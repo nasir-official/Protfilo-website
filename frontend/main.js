@@ -1,6 +1,15 @@
 /**
- * Vanilla JS logic for Portfolio
+ * Vanilla JS logic for Portfolio - AI/ML Engine v1.0
  */
+
+// =========================================
+// AI/ML Engine Startup Sequence
+// =========================================
+console.log('%c[NASIR-AI]: INITIALIZING NEURAL NETWORK...', 'color: #00f2fe; font-weight: bold; font-family: monospace;');
+console.log('%c[NASIR-AI]: LOADING PREDICTIVE WEIGHTS (Landslide, Road_Safety, Water)...', 'color: #bc4e9c; font-family: monospace;');
+console.log('%c[NASIR-AI]: CORE STACK: PURE_VANILLA_JS // FLASK_BACKEND // SQLITE_DATA', 'color: #94a3b8; font-family: monospace;');
+console.log('%c[NASIR-AI]: SYSTEM READY.', 'color: #10b981; font-weight: bold; font-family: monospace;');
+
 
 // =========================================
 // Intersection Observer for Scroll Animations
