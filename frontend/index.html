@@ -1,21 +1,217 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Muhammad Nasir | React Portfolio</title>
-    
-    <!-- Google Fonts -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Nasir | Data Analyst & ML Engineer</title>
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#hero" class="nav-logo">
+                Nasir's <span>Portfolio</span>
+            </a>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="admin.html" class="nav-link">Admin</a></li>
+            </ul>
+
+            <div class="mobile-toggle" id="mobile-toggle">
+                <span class="mobile-line"></span>
+                <span class="mobile-line"></span>
+                <span class="mobile-line"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero fade-in-up">
+            <div class="container hero-content">
+                <h4 class="overline">Machine Learning Engineer & Data Analyst</h4>
+                <h1 class="heading-lg">Muhammad <span class="text-gradient">Nasir</span></h1>
+                <p class="subtitle">
+                    Transforming complex data into actionable insights and predictive models. Specializing in risk prediction and environmental analysis.
+                </p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-outline">Get In Touch</a>
+                </div>
+            </div>
+
+            <!-- Background blobs -->
+            <div class="blob-container">
+                <div class="blob blob-1"></div>
+                <div class="blob blob-2"></div>
+            </div>
+            
+            <div class="scroll-indicator fade-in-delayed">
+                <span>Scroll Down</span>
+                <i class="fas fa-chevron-down bounce"></i>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section container">
+            <div class="section-header fade-in-up">
+                <h2 class="heading-md">About Me</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="grid-cols-2">
+                <div class="fade-in-left">
+                    <p class="subtitle" style="margin-bottom: 1.5rem;">
+                        I am a passionate Machine Learning practitioner and Data Analyst dedicated to solving real-world problems through data-driven approaches. With a background in developing predictive systems for environmental risks and social dynamics, I focus on creating technology that makes a positive impact.
+                    </p>
+                    <p class="subtitle">
+                        My work spans from road safety prediction models to water availability analysis, always maintaining a balance between mathematical rigor and user-centric design.
+                    </p>
+
+                    <div class="about-stats">
+                        <div class="stat-box">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">ML Models</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Data Projects</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-image fade-in-right">
+                    <!-- Note: I will replace the image URL or put profile.png here later -->
+                    <img src="assets/profile.png" alt="Muhammad Nasir" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80'" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section skills-container">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <h2 class="heading-md">Technical Skills</h2>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="grid-cols-3 stagger-children">
+                    <div class="skill-card fade-in-up">
+                        <h3 class="skill-title">Machine Learning</h3>
+                        <div class="skill-tags">
+                            <span class="tag">Supervised Learning</span>
+                            <span class="tag">Random Forest</span>
+                            <span class="tag">XGBoost</span>
+                            <span class="tag">Neural Networks</span>
+                            <span class="tag">NLP</span>
+                        </div>
+                    </div>
+                    <div class="skill-card fade-in-up">
+                        <h3 class="skill-title">Data Science</h3>
+                        <div class="skill-tags">
+                            <span class="tag">Python (Pandas, Numpy)</span>
+                            <span class="tag">Data Visualization</span>
+                            <span class="tag">Feature Engineering</span>
+                            <span class="tag">Statistical Analysis</span>
+                        </div>
+                    </div>
+                    <div class="skill-card fade-in-up">
+                        <h3 class="skill-title">Backend & Tools</h3>
+                        <div class="skill-tags">
+                            <span class="tag">Flask</span>
+                            <span class="tag">SQLAlchemy</span>
+                            <span class="tag">Git</span>
+                            <span class="tag">Scikit-learn</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section container">
+            <div class="section-header fade-in-up">
+                <h2 class="heading-md">Featured Projects</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="grid-cols-3 stagger-children" id="projects-grid">
+                <!-- Projects generated via JS or pure HTML here -->
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section container">
+            <div class="section-header fade-in-up">
+                <h2 class="heading-md">Get In Touch</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="grid-cols-2">
+                <div class="contact-info fade-in-left">
+                    <h3 class="heading-sm" style="margin-bottom: 1.5rem;">Connect With Me</h3>
+                    <p class="subtitle">
+                        Feel free to reach out for collaborations or just a friendly chat about data and AI.
+                    </p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <span>example@email.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <span>Pakistan</span>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form-card fade-in-right">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required class="form-input" />
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required class="form-input" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required class="form-input" />
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" required class="form-input form-textarea"></textarea>
+                        </div>
+                        
+                        <button type="submit" id="submit-btn" class="btn btn-primary btn-submit">Send Message</button>
+                        <div id="form-status" class="form-status"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Muhammad Nasir. All rights reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
 </html>

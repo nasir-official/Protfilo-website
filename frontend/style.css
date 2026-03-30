@@ -265,6 +265,10 @@ ul {
   color: var(--text-primary);
 }
 
+.hidden {
+  display: none !important;
+}
+
 /* --- Buttons --- */
 .btn {
   display: inline-flex;
@@ -448,7 +452,7 @@ ul {
 }
 
 .skill-card:hover {
-  border-color: rgba(0, 242, 254, 0.3);
+  border-color: rgba(16, 185, 129, 0.3);
   transform: translateY(-8px);
 }
 
@@ -478,7 +482,7 @@ ul {
 }
 
 .skill-card:hover .tag {
-  border-color: rgba(0, 242, 254, 0.2);
+  border-color: rgba(16, 185, 129, 0.2);
 }
 
 /* --- Projects --- */
@@ -494,7 +498,7 @@ ul {
 
 .project-card:hover {
   transform: translateY(-8px);
-  border-color: rgba(0, 242, 254, 0.4);
+  border-color: rgba(16, 185, 129, 0.4);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -592,7 +596,7 @@ ul {
   color: var(--accent-primary);
 }
 
-/* --- Contact --- */
+/* --- Contact & Admin --- */
 .contact-info {
   display: flex;
   flex-direction: column;
@@ -677,8 +681,8 @@ ul {
   font-size: 0.875rem;
 }
 
-.text-success { color: #4ade80; }
-.text-error { color: #f87171; }
+.text-success { color: #10b981; }
+.text-error { color: #ef4444; }
 
 /* --- Footer --- */
 .footer {
@@ -692,6 +696,20 @@ ul {
 /* =========================================
    BACKGROUND ANIMATIONS
 ========================================= */
+@keyframes float {
+  from { transform: translate(0, 0); }
+  to { transform: translate(100px, 50px) scale(1.1); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+.bounce {
+  animation: bounce 2s infinite;
+}
+
 .blob-container {
   position: absolute;
   top: 0;
@@ -701,6 +719,30 @@ ul {
   overflow: hidden;
   z-index: 0;
   pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  filter: blur(80px);
+  opacity: 0.15;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.blob-1 {
+  background: var(--accent-primary);
+  top: -10%;
+  right: -10%;
+  animation: float 20s infinite alternate;
+}
+
+.blob-2 {
+  background: var(--accent-secondary);
+  bottom: -10%;
+  left: -10%;
+  animation: float 25s infinite alternate-reverse;
 }
 
 /* =========================================
@@ -719,7 +761,7 @@ ul {
 
 .message-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(0, 242, 254, 0.4);
+  border-color: rgba(16, 185, 129, 0.4);
 }
 
 .message-header {
@@ -753,3 +795,38 @@ ul {
   line-height: 1.6;
   white-space: pre-wrap;
 }
+
+/* =========================================
+   INTERSECTION OBSERVER ANIMATIONS
+========================================= */
+.fade-in-up, .fade-in-left, .fade-in-right, .fade-in-delayed {
+  opacity: 0;
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.fade-in-up { transform: translateY(30px); }
+.fade-in-left { transform: translateX(-50px); }
+.fade-in-right { transform: translateX(50px); }
+.fade-in-delayed { transition-delay: 1s; }
+
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity var(--transition-smooth), transform var(--transition-smooth);
+}
+
+/* Visibility triggers via JS class */
+.fade-in-up.visible, 
+.fade-in-left.visible, 
+.fade-in-right.visible,
+.fade-in-delayed.visible {
+  opacity: 1;
+  transform: translate(0);
+}
+
+.stagger-children.visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Manual Delay rules for staggered children injected by JS */
