@@ -29,7 +29,7 @@ const Navbar = () => {
         >
             <div className="container nav-container">
                 <a href="#hero" className="nav-logo">
-                    MN<span>.</span>
+                    Nasir's <span>Portfolio</span>
                 </a>
 
                 {/* Desktop Menu */}
