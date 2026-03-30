@@ -55,17 +55,17 @@ const Projects = () => {
     };
 
     return (
-        <section id="projects" className="py-32 container">
-            <div className="text-center mb-20">
+        <section id="projects" className="section container">
+            <div className="section-header">
                 <motion.h2
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="font-['Orbitron'] text-4xl mb-4 text-white"
+                    className="heading-md"
                 >
                     Featured Projects
                 </motion.h2>
-                <div className="w-16 h-1 bg-[#00f2fe] mx-auto rounded-full"></div>
+                <div className="section-divider"></div>
             </div>
 
             <motion.div
@@ -73,40 +73,37 @@ const Projects = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                className="grid-cols-3"
             >
                 {projects.map((project) => (
                     <motion.div
                         key={project.id}
                         variants={itemVariants}
-                        whileHover={{ y: -12 }}
-                        className="bg-[#161b22]/70 rounded-2xl overflow-hidden border border-white/10 hover:border-[#00f2fe]/40 transition-all group"
+                        className="project-card"
                     >
-                        <div className="h-60 overflow-hidden relative">
-                            <div className="absolute inset-0 bg-[#00f2fe]/20 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
+                        <div className="project-image-wrapper">
+                            <div className="project-overlay"></div>
                             <img
                                 src={project.image}
                                 alt={project.title}
-                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                className="project-image"
                             />
                         </div>
-                        <div className="p-8">
-                            <h3 className="font-['Orbitron'] text-xl mb-4 text-white group-hover:text-[#00f2fe] transition-colors">{project.title}</h3>
-                            <p className="text-[#8b949e] text-sm mb-6 leading-relaxed flex-grow">
-                                {project.description}
-                            </p>
-                            <div className="flex flex-wrap gap-2 mb-8">
+                        <div className="project-content">
+                            <h3 className="project-title">{project.title}</h3>
+                            <p className="project-desc">{project.description}</p>
+                            <div className="project-tech">
                                 {project.tags.map((tag) => (
-                                    <span key={tag} className="text-[10px] uppercase font-bold text-[#00f2fe] bg-[#00f2fe]/10 px-3 py-1 rounded">
+                                    <span key={tag} className="tech-tag">
                                         {tag}
                                     </span>
                                 ))}
                             </div>
-                            <div className="flex gap-6">
-                                <a href="#" className="text-white text-xs uppercase tracking-widest no-underline flex items-center gap-2 hover:text-[#00f2fe] transition-colors">
+                            <div className="project-links">
+                                <a href="#" className="project-link">
                                     <i className="fab fa-github"></i> Source
                                 </a>
-                                <a href="#" className="text-white text-xs uppercase tracking-widest no-underline flex items-center gap-2 hover:text-[#00f2fe] transition-colors">
+                                <a href="#" className="project-link">
                                     <i className="fas fa-external-link-alt"></i> Live Demo
                                 </a>
                             </div>

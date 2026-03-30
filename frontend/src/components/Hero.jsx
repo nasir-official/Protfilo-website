@@ -2,13 +2,13 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
     return (
-        <section id="hero" className="h-screen flex items-center justify-center relative overflow-hidden text-center overflow-hidden">
-            <div className="z-10 px-8">
+        <section id="hero" className="hero">
+            <div className="container hero-content">
                 <motion.h4
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="font-['Orbitron'] text-[#00f2fe] text-xs md:text-sm tracking-[4px] uppercase mb-4"
+                    className="overline"
                 >
                     Machine Learning Engineer & Data Analyst
                 </motion.h4>
@@ -17,16 +17,16 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
-                    className="font-['Orbitron'] text-5xl md:text-7xl font-black mb-6 leading-tight tracking-tight text-white"
+                    className="heading-lg"
                 >
-                    Muhammad <span className="bg-gradient-to-r from-[#00f2fe] to-[#4568dc] bg-clip-text text-transparent">Nasir</span>
+                    Muhammad <span className="text-gradient">Nasir</span>
                 </motion.h1>
 
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
-                    className="max-w-2xl mx-auto text-[#8b949e] text-lg mb-10 leading-relaxed"
+                    className="subtitle"
                 >
                     Transforming complex data into actionable insights and predictive models. Specializing in risk prediction and environmental analysis.
                 </motion.p>
@@ -35,34 +35,30 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.6 }}
-                    className="flex gap-6 justify-center"
+                    className="hero-actions"
                 >
-                    <a
-                        href="#projects"
-                        className="px-8 py-3 bg-[#00f2fe] text-[#0a0e14] font-bold rounded hover:shadow-[0_0_20px_rgba(0,242,254,0.3)] transition-all transform hover:-translate-y-1 no-underline text-xs md:text-sm uppercase tracking-widest"
-                    >
+                    <a href="#projects" className="btn btn-primary">
                         View Projects
                     </a>
-                    <a
-                        href="#contact"
-                        className="px-8 py-3 border border-[#00f2fe] text-[#00f2fe] font-bold rounded hover:bg-[#00f2fe]/10 transition-all transform hover:-translate-y-1 no-underline text-xs md:text-sm uppercase tracking-widest"
-                    >
+                    <a href="#contact" className="btn btn-outline">
                         Get In Touch
                     </a>
                 </motion.div>
             </div>
 
             {/* Background blobs */}
-            <div className="blob blob-1"></div>
-            <div className="blob blob-2"></div>
+            <div className="blob-container">
+                <div className="blob blob-1"></div>
+                <div className="blob blob-2"></div>
+            </div>
             
             <motion.div 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1, duration: 1 }}
-                className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#8b949e]"
+                className="scroll-indicator"
             >
-                <span className="text-xs uppercase tracking-widest">Scroll Down</span>
+                <span>Scroll Down</span>
                 <motion.i 
                     animate={{ y: [0, 10, 0] }}
                     transition={{ repeat: Infinity, duration: 2 }}

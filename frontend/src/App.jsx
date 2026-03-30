@@ -18,7 +18,7 @@ function App() {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            page_name: 'home_react'
+            page_name: 'home_react_adv_css'
           }),
         });
       } catch (error) {
@@ -30,7 +30,7 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-[#0a0e14] min-h-screen text-[#e6edf3]">
+    <>
       <Navbar />
       <main>
         <Hero />
@@ -40,12 +40,10 @@ function App() {
         <Contact />
       </main>
       
-      <footer className="py-12 border-t border-white/10 text-center">
-        <p className="text-[#8b949e] text-sm">
-          &copy; 2026 Muhammad Nasir. All rights reserved.
-        </p>
+      <footer className="footer">
+        <p>&copy; 2026 Muhammad Nasir. All rights reserved.</p>
       </footer>
-    </div>
+    </>
   );
 }
 

@@ -50,49 +50,48 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="py-32 container">
-            <div className="text-center mb-20">
+        <section id="contact" className="section container">
+            <div className="section-header">
                 <motion.h2
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="font-['Orbitron'] text-4xl mb-4 text-white"
+                    className="heading-md"
                 >
                     Get In Touch
                 </motion.h2>
-                <div className="w-16 h-1 bg-[#00f2fe] mx-auto rounded-full"></div>
+                <div className="section-divider"></div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div className="grid-cols-2">
                 <motion.div
                     initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    className="flex flex-col justify-center"
+                    className="contact-info"
                 >
-                    <h3 className="font-['Orbitron'] text-2xl mb-6 text-white">Connect With Me</h3>
-                    <p className="text-[#8b949e] text-lg mb-10 leading-relaxed">
+                    <h3 className="heading-sm" style={{ marginBottom: '1.5rem' }}>Connect With Me</h3>
+                    <p className="subtitle">
                         Feel free to reach out for collaborations or just a friendly chat about data and AI.
                     </p>
                     
-                    <div className="flex flex-col gap-6 mb-10">
-                        <div className="flex items-center gap-4 text-[#8b949e]">
-                            <i className="fas fa-envelope text-[#00f2fe] text-xl"></i>
+                    <div className="contact-details">
+                        <div className="contact-item">
+                            <i className="fas fa-envelope contact-icon"></i>
                             <span>example@email.com</span>
                         </div>
-                        <div className="flex items-center gap-4 text-[#8b949e]">
-                            <i className="fas fa-map-marker-alt text-[#00f2fe] text-xl"></i>
+                        <div className="contact-item">
+                            <i className="fas fa-map-marker-alt contact-icon"></i>
                             <span>Pakistan</span>
                         </div>
                     </div>
 
-                    <div className="flex gap-6">
+                    <div className="social-links">
                         {['linkedin-in', 'github', 'twitter'].map((icon) => (
                             <motion.a
                                 key={icon}
                                 href="#"
-                                whileHover={{ y: -5, color: '#00f2fe' }}
-                                className="text-2xl text-white transition-colors"
+                                className="social-link"
                             >
                                 <i className={`fab fa-${icon}`}></i>
                             </motion.a>
@@ -104,10 +103,10 @@ const Contact = () => {
                     initial={{ opacity: 0, x: 30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    className="glass-card p-10 md:p-14"
+                    className="contact-form-card"
                 >
-                    <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-                        <div className="flex flex-col gap-2">
+                    <form onSubmit={handleSubmit}>
+                        <div className="form-group">
                             <input
                                 type="text"
                                 name="name"
@@ -115,10 +114,10 @@ const Contact = () => {
                                 onChange={handleChange}
                                 placeholder="Your Name"
                                 required
-                                className="w-full p-4 bg-white/5 border border-white/10 rounded-lg text-white outline-none focus:border-[#00f2fe] transition-all"
+                                className="form-input"
                             />
                         </div>
-                        <div className="flex flex-col gap-2">
+                        <div className="form-group">
                             <input
                                 type="email"
                                 name="email"
@@ -126,10 +125,10 @@ const Contact = () => {
                                 onChange={handleChange}
                                 placeholder="Your Email"
                                 required
-                                className="w-full p-4 bg-white/5 border border-white/10 rounded-lg text-white outline-none focus:border-[#00f2fe] transition-all"
+                                className="form-input"
                             />
                         </div>
-                        <div className="flex flex-col gap-2">
+                        <div className="form-group">
                             <input
                                 type="text"
                                 name="subject"
@@ -137,24 +136,24 @@ const Contact = () => {
                                 onChange={handleChange}
                                 placeholder="Subject"
                                 required
-                                className="w-full p-4 bg-white/5 border border-white/10 rounded-lg text-white outline-none focus:border-[#00f2fe] transition-all"
+                                className="form-input"
                             />
                         </div>
-                        <div className="flex flex-col gap-2">
+                        <div className="form-group">
                             <textarea
                                 name="message"
                                 value={formState.message}
                                 onChange={handleChange}
                                 placeholder="Your Message"
                                 required
-                                className="w-full p-4 bg-white/5 border border-white/10 rounded-lg text-white outline-none focus:border-[#00f2fe] transition-all h-40 resize-none"
+                                className="form-input form-textarea"
                             ></textarea>
                         </div>
                         
                         <button
                             type="submit"
                             disabled={isSubmitting}
-                            className="w-full py-4 bg-[#00f2fe] text-[#0a0e14] font-bold rounded uppercase tracking-widest text-sm hover:shadow-[0_0_20px_rgba(0,242,254,0.4)] transition-all disabled:opacity-50"
+                            className="btn btn-primary btn-submit"
                         >
                             {isSubmitting ? 'Sending...' : 'Send Message'}
                         </button>
@@ -165,7 +164,7 @@ const Contact = () => {
                                     initial={{ opacity: 0, height: 0 }}
                                     animate={{ opacity: 1, height: 'auto' }}
                                     exit={{ opacity: 0, height: 0 }}
-                                    className={`text-center py-2 text-sm ${status.type === 'success' ? 'text-green-400' : 'text-red-400'}`}
+                                    className={`form-status ${status.type === 'success' ? 'text-success' : 'text-error'}`}
                                 >
                                     {status.message}
                                 </motion.div>
